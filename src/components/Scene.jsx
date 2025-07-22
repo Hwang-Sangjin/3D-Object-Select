@@ -3,6 +3,7 @@ import { Chair1 } from "./model/Chair1";
 import {
   Environment,
   OrbitControls,
+  Select,
   TransformControls,
 } from "@react-three/drei";
 import Plane from "./Plane";
@@ -14,12 +15,14 @@ import ObjectsScene from "../ObjectsScene";
 const Scene = () => {
   return (
     <Canvas>
-      <Suspense>
+      <Suspense fallback={null}>
         <Environment preset="city" />
         <Selection>
           <Effects />
           <ObjectsScene />
         </Selection>
+
+        <Plane />
 
         <OrbitControls />
       </Suspense>
